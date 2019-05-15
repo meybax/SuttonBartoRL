@@ -40,7 +40,7 @@ for _ in range(trials):
 opt_const = opt_const / trials * 100
 rewards_const = rewards_const / trials
 opt_avg = opt_avg / trials * 100
-rewards_avg = rewards_avg/ trials
+rewards_avg = rewards_avg / trials
 time = np.arange(steps)
 
 fig, (ax1, ax2) = plt.subplots(2, sharex=True)
