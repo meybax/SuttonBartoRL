@@ -13,7 +13,7 @@ rewards_avg = np.zeros(10000)
 opt_const = np.zeros(10000)
 opt_avg = np.zeros(10000)
 
-def step(q, Q, rewards, opt, alp):
+def step(q, Q, rewards, opt, step_size):
     if rand.rand() > eps:
         action = np.argmax(Q)
     else:
@@ -23,7 +23,7 @@ def step(q, Q, rewards, opt, alp):
     opt[n] += (optAct == action)
 
     R = rand.normal(q[action], 0.1)
-    Q[action] = Q[action] + alp * (R - Q[action])
+    Q[action] = Q[action] + step_size * (R - Q[action])
     rewards[n] += R
 
 for _ in range(trials):
